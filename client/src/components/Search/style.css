@@ -1,0 +1,34 @@
+.search {
+  height: 8vh;
+  min-height: 4em;
+  min-width: 4em;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #ffffff;
+}
+.search-form {
+  background-color: #eeeff2;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  height: 50%;
+  width: 60%;
+  padding: 0 6px;
+}
+.search-btn {
+  width: 24%;
+  height: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+.btn-add-user-group {
+  height: 100%;
+  border-radius: 4px;
+}
+.btn-add-user-group:hover {
+  background-color: #eeeff2;
+}
+.btn-add-user-group:focus {
+  background-color: #eeeff2;
+}

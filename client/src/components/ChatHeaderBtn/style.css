@@ -1,0 +1,19 @@
+.chat-header-btn {
+  height: 100%;
+  min-width: 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 1.5em;
+}
+.btn-chat-header {
+  border-radius: 4px;
+  margin: 0 0.2em;
+  border: none;
+}
+.btn-chat-header:hover {
+  background-color: #eeeff2;
+}
+.btn-chat-header:focus {
+  background-color: #eeeff2;
+}

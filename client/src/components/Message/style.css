@@ -1,0 +1,31 @@
+.message-author {
+  font-weight: bold;
+}
+.message-date {
+  font-size: 10px;
+  color: #a7a7a7;
+}
+.content {
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin: 0 8px;
+  padding: 10px;
+  
+}
+.msg {
+  margin-bottom: 10px;
+  display: flex;
+  font-weight: bold;
+
+}
+
+.m-msg .content{
+  background-color: #c9eaed;
+}
+.m-msg {
+  margin-right: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  font-weight: bold;
+  flex-direction: row-reverse;
+}

@@ -1,0 +1,62 @@
+.chat-view-input {
+  height: 8vh;
+  background-color: #ffffff;
+}
+.ant-form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ant-form-item {
+  width: 70%;
+  flex: 1;
+  margin-bottom: 0;
+}
+.chat-view-input-btn {
+  padding-right: 2em;
+  display: flex;
+  align-items: center;
+  max-height: 50px;
+  max-width: 500px;
+
+}
+.btn-input {
+  margin-left: 0.3em;
+  border-radius: 4px;
+}
+.btn-input:hover {
+  background-color: #eeeff2;
+}
+.btn-input:focus {
+  background-color: #eeeff2;
+}
+.btn-submit {
+  margin-left: 0.3em;
+}
+.textInput{
+  width:100%;
+  height: 100%;
+  border-width: 0;
+  /* background-color: red; */
+  
+}
+input:focus{
+  outline:0;}
+
+  .emoji {
+    position: relative;}
+.emoji-picker-react {
+  position: absolute;
+  top: -200px;
+  left:  200px;
+  background-color: #080420;
+  box-shadow: 0 5px 10px #9a86f3;
+  border-color: #9a86f3;
+}
+.emoji-picker-react .emoji-scroll-wrapper::-webkit-scrollbar {
+  background-color: #080420;
+  width: 5px;
+  
+}
