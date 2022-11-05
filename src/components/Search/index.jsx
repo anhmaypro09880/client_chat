@@ -6,15 +6,19 @@ import {
 } from "@ant-design/icons";
 import { Button, Input } from "antd";
 import "./style.css";
-
-export const AppContext = React.createContext();
+import { AppContext } from "../../context/AppProvider";
 
 export default function Search() {
-  // const { setIsAddRoomVisible } = React.useContext(AppContext);
+  const { setIsAddUserModalOpen, setIsAddGroupModalOpen } =
+    React.useContext(AppContext);
 
-  // const handleAddRoom = () => {
-  //   setIsAddRoomVisible(true);
-  // };
+  const handleAddUser = () => {
+    setIsAddUserModalOpen(true);
+  };
+
+  const handleAddGroup = () => {
+    setIsAddGroupModalOpen(true);
+  };
 
   return (
     <div className="search">
@@ -32,13 +36,13 @@ export default function Search() {
           type="text"
           icon={<UserAddOutlined />}
           className="btn-add-user-group"
-          // onClick={handleAddUser}
+          onClick={handleAddUser}
         ></Button>
         <Button
           type="text"
           icon={<UsergroupAddOutlined />}
           className="btn-add-user-group"
-          // onClick={handleAddRoom}
+          onClick={handleAddGroup}
         ></Button>
       </div>
     </div>

@@ -1,0 +1,86 @@
+.ant-modal-body {
+  flex-direction: column;
+  display: flex;
+}
+.md-info-user-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.md-info-user-avt {
+  margin-top: -35px;
+}
+.md-info-user-header span {
+  font-size: 22px;
+  font-weight: bold;
+}
+.md-info-user-body {
+  height: 16rem;
+}
+.md-info-user-body span {
+  padding: 0.5rem 0;
+}
+.md-info-user-body-bd {
+  display: flex;
+  font-size: 16px;
+}
+.md-info-user-body-bd-1 {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+.md-info-user-body-bd-2 {
+  display: flex;
+  flex-direction: column;
+}
+.md-info-user-body Button {
+  width: 100%;
+  height: 50px;
+  margin-top: 50px;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  background-color: #d2d2d2;
+}
+.md-info-user-body Button:hover {
+  background-color: #c3c3c3;
+  color: black;
+}
+
+/* Style UpdateInfoUserModal */
+.ddfaZm {
+  margin-top: -35px;
+}
+
+.md-info-user-header div {
+  border: none;
+}
+.md-info-user-header input {
+  width: 70px;
+  height: 70px;
+}
+.md-u-info-user-form-body {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.md-u-info-user-form-body span {
+  margin: 2px 0;
+}
+
+.md-add-user-input {
+  margin: -10px 0 20px 0;
+}
+.md-add-user-list {
+  height: 300px;
+  overflow-y: auto;
+}
+
+.md-add-group-header-name {
+  display: flex;
+  justify-content: space-between;
+}
+.md-add-group-header-name-input {
+  height: 50px;
+  width: 86%;
+}

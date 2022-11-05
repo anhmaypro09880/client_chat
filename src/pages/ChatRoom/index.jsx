@@ -54,7 +54,9 @@ export default function ChatRoom() {
       socket.current = io(host);
       socket.current.emit("add-user", id);
     
-      const data = await axios.get(`${allUsersRoute}/${id}`);
+      const data = await axios.post(allUsersRoute,{
+        id
+      });
       const getCurenUser=setInterval( ()=>{
         setContacts(
          data.data

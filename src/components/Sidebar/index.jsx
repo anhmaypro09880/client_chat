@@ -1,6 +1,6 @@
 
 import { Col, Row } from "antd";
-import Menu from "../Menu";
+import MainTab from "../MainTab";
 import "./style.css";
 import Navbar from "../Navbar";
 import React, { useState ,useEffect} from "react";
@@ -12,7 +12,7 @@ export default function Sidebar({contacts,changeChat}) {
       <Row>
         
         <Col span={4}>
-          <Menu />
+          <MainTab />
         </Col>
         <Col span={20}>
           <Navbar contacts={contacts} changeChat={changeChat} />

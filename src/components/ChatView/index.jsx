@@ -54,15 +54,19 @@ export default function ChatView({socket,currentChat}) {
       const data = await JSON.parse(
         localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)
       );
-      socket.current.emit("send-msg", {
-        to: currentChat._id,
-        from: data._id,
-        msg,
-      });
+      
       const data1 = await axios.post(sendMessageRoute, {
         from: data._id,
         to: currentChat._id,
         message: msg,
+      });
+
+      socket.current.emit("send-msg", {
+        to: currentChat._id,
+        from: data._id,
+        msg,
+        id:data1.data.id
+        
       });
   
       const msgs = [...messages];
@@ -75,10 +79,11 @@ export default function ChatView({socket,currentChat}) {
       async function fetchData() {
         const getCurenUser=setInterval( ()=>{
           if (socket.current) {
-              socket.current.on("msg-recieve", ({msg}) => {
+              socket.current.on("msg-recieve", ({msg,id}) => {
+                // console.log(id);
               if(msg !==undefined)
               {
-                setArrivalMessage({ fromSelf: false, message: msg });
+                setArrivalMessage({ fromSelf: false, message: msg,id:id });
               }
               // alert("mess : "+msg);
             //  console.log("test1");

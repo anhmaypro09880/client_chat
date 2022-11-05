@@ -38,37 +38,38 @@ export default function Message({
   };
   const [isclick,setclick] =useState(message.reaction)
   const from = JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY))._id
-  // useEffect( () => {
-  //   async function fetchData() {
+  useEffect( () => {
+    async function fetchData() {
       
-  //       if (socket.current) {
-  //         await  socket.current.on("msg-recieve", ({react}) => {
-  //             // console.log("listen msg");
-  //             if(react!==undefined)
-  //             {
-  //               // console.log("test:"+react +":"+message.reaction);
-  //               if(isclick==="❤️")
-  //                 {
-  //                   setclick("")
-  //                 }
-  //                 else{
-  //                   setclick("❤️")
-  //                 }
-                  
-  //             }
-  //           // alert("mess : "+msg);
+        if (socket.current) {
+          await  socket.current.on("msg-recieve", ({react,id}) => {
+              // console.log("listen msg");
+              if(react!==undefined)
+              {
+                // console.log("test:"+react +":"+message.reaction);
+                if(id===message.id)
+                {
+                  if(react==="❤️")
+                  {
+                    console.log("tim 1");
+                    setclick("❤️")
+                  }
+                  else{
+                    console.log("tim 2");
+                    setclick("")
+                  }
+                } 
+              }
+            // alert("mess : "+msg);
            
-  //         });
-  //       }   
-  // }
-  // fetchData();
-  // }, [isclick]);
-  // useEffect(()=>{
-  //   console.log("test");
-  // },[message])
-
+          });
+        }   
+  }
+  fetchData();
+  }, []);
+  
   const clicktest = async(message)=>{
-    // console.log(message);
+    console.log(message);
     
     if(isclick==="❤️")
     {
@@ -81,25 +82,26 @@ export default function Message({
     if(isclick==="")
     {
       
-      
+      console.log(message);
       socket.current.emit("send-msg", {
         to: currentChat._id,
         from: from,
         react:"❤️",
+        id:message.id
       });
       const response =  await axios.post(addreaction, {
         id:message,
-        reaction:"❤️"
+        reaction:"❤️",
       });
       
     }
     else{
     
-      
       socket.current.emit("send-msg", {
         to: currentChat._id,
         from: from,
         react:"",
+        id:message.id
       });
       const response =  await axios.post(addreaction, {
         id:message,

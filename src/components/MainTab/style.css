@@ -1,0 +1,134 @@
+.main-tab {
+  background-color: #0091ff;
+  min-width: 70px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.btn-avatar {
+  background-color: #0091ff;
+  height: 10vh;
+  width: 100%;
+  border: none;
+  border-radius: 100%;
+}
+.btn-avatar:hover {
+  background-color: #0091ff;
+}
+.btn-avatar:focus {
+  background-color: #0091ff;
+}
+.btn-menu {
+  background-color: #0091ff;
+  height: 10vh;
+  width: 100%;
+  border: none;
+}
+.btn-menu:hover {
+  background-color: #0082e5;
+}
+.btn-menu:focus {
+  background-color: #0082e5;
+}
+
+.menu {
+  background: #ffffff;
+  border-radius: 6px;
+  position: absolute;
+  top: 2.5%;
+  left: 100%;
+  width: 300px;
+  z-index: 10;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  padding: 0 1rem;
+}
+
+.menu.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  padding: 0.5rem 0;
+}
+
+.menu Button {
+  font-size: 16px;
+  width: 100%;
+  text-align: left;
+  padding-left: 0;
+}
+
+.menu Button:hover {
+  background-color: #dddddd;
+}
+
+.menu-header {
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid #dddddd;
+}
+
+.menu-body {
+  border-bottom: 1px solid #dddddd;
+}
+
+/* Style menu setting */
+.menu-setting {
+  background: #ffffff;
+  border-radius: 6px;
+  position: absolute;
+  top: 2.5%;
+  left: 100%;
+  width: 300px;
+  z-index: 10;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  padding: 0 1rem;
+}
+
+.menu-setting.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu-setting ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-setting li {
+  padding: 0.5rem 0;
+}
+
+.menu-setting Button {
+  font-size: 16px;
+  width: 100%;
+  text-align: left;
+  padding-left: 0;
+}
+
+.menu-setting Button:hover {
+  background-color: #dddddd;
+}
+
+.menu-setting-header {
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid #dddddd;
+}
+
+.menu-setting-body {
+  border-bottom: 1px solid #dddddd;
+}
