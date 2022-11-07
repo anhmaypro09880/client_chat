@@ -51,6 +51,8 @@ export default function ChatViewMessage({messages,socket,currentChat}) {
                   displayName={message.displayName}
                   createdAt={message.createdAt}
                   mesUid={message.uid}
+                  namesend={message.namesend}
+                  avatarImage={message.avatarImage}
                 />
                 
                 {/* <div><button onClick={() => test(message)}>test</button></div> */}

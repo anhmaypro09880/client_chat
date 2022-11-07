@@ -8,7 +8,11 @@ export default function AppProvider({ children }) {
     useState(false);
   const [isAddUserModalOpen, setIsAddUserModalOpen] = useState(false);
   const [isAddGroupModalOpen, setIsAddGroupModalOpen] = useState(false);
-
+  const [contacts,setContacts] =useState([])
+  const [user,setUser] =useState()
+  const [room,setRoom] = useState(undefined)
+  const [roomChat,setRoomChat] = useState(undefined)
+  const [currentChat, setCurrentChat] = useState(undefined);
   // const dropdownRef = useRef(null);
   // const [isActive, setIsActive] = useDetectOutsideClick(dropdownRef, false);
 
@@ -30,6 +34,16 @@ export default function AppProvider({ children }) {
         setIsAddUserModalOpen,
         isAddGroupModalOpen,
         setIsAddGroupModalOpen,
+        contacts,
+        setContacts,
+        user,
+        setUser,
+        room,
+        setRoom,
+        roomChat,
+        setRoomChat,
+        currentChat,
+        setCurrentChat,
         // isActive,
         // setIsActive,
         clearState,

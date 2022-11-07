@@ -5,7 +5,6 @@ const useOutsideClick = (initialValue) => {
   const [isActive, setIsActive] = useState(initialValue);
 
   const handleClickOutside = (event) => {
-    console.log(ref);
     if (ref.current && !ref.current.contains(event.target)) setIsActive(false);
   };
 

@@ -1,5 +1,7 @@
 .message-author {
   font-weight: bold;
+  font-style: italic;
+  color: #686868;
 }
 .message-date {
   font-size: 10px;

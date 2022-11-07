@@ -1,8 +1,8 @@
 import { Button, Form, Input } from "antd";
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import Picker from "emoji-picker-react";
 import styled from "styled-components";
-
+import { AppContext } from "../../context/AppProvider";
 
 import {
   LinkOutlined,
@@ -13,6 +13,8 @@ import {
 import "./style.css";
 
 export default function ChatViewInput({handleSendMsg}) {
+  const {currentChat,roomChat } =
+    useContext(AppContext);
   const [msg, setMsg] = useState("");
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
 

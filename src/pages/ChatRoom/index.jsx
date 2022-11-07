@@ -1,4 +1,4 @@
-import React, { useState ,useEffect, useRef,useMemo} from "react";
+import React, { useState ,useEffect, useRef,useMemo,useContext} from "react";
 import { Col, Row } from "antd";
 import axios from "axios";
 import Sidebar from "../../components/Sidebar";
@@ -7,11 +7,13 @@ import ChatWindow from "../../components/ChatWindow";
 import { Link, useNavigate } from "react-router-dom";
 import { io } from "socket.io-client";
 import { allUsersRoute, host } from "../../utils/APIRoutes";
-
+import { AppContext } from "../../context/AppProvider";
 export default function ChatRoom() {
   const navigate = useNavigate();
-  const [contacts, setContacts] = useState([]);
-  const [currentChat, setCurrentChat] = useState(undefined);
+  const { contacts, setContacts,setUser,currentChat,setCurrentChat } =
+  useContext(AppContext);
+  // const [contacts, setContacts] = useState([]);
+  
   const [currentUser, setCurrentUser] = useState(undefined);
   const [test,settest] = useState("")
   const socket = useRef();
@@ -25,14 +27,15 @@ export default function ChatRoom() {
       
     } else {
 
-      const getCurenUser=setInterval( ()=>{
+  
         setCurrentUser(
          
           localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)
         
       );
-      },0)
-      return ()=> clearInterval(getCurenUser)
+      setUser(JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)))
+      
+     
       
       
       ;
@@ -57,18 +60,29 @@ export default function ChatRoom() {
       const data = await axios.post(allUsersRoute,{
         id
       });
-      const getCurenUser=setInterval( ()=>{
+    
         setContacts(
          data.data
       );
-      },0)
-      return ()=> clearInterval(getCurenUser)
+   
     }
   }
     fetchData();
   }, [currentUser]);
   const  handleChatChange = async (chat) => {
-    await setCurrentChat(chat);
+    // 
+    // {
+
+      await setCurrentChat(chat);
+    // }
+    // if(chat.length!==undefined)
+    // {
+    //   for(let i = 0 ; i < chat.length;i++)
+    //     {
+    //       console.log(chat[i].user._id)
+    //     }
+    // }
+    
   };
  
   // useEffect(()=>{
@@ -77,7 +91,7 @@ export default function ChatRoom() {
   //   }
   //   fetchData();
   //   }, [currentChat]);
-  
+  // console.log(contacts);
   return (
     <Row>
       <Col span={7}>

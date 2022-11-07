@@ -6,12 +6,14 @@ import {
   SettingOutlined,
 } from "@ant-design/icons";
 import "./style.css";
+
 import { AppContext } from "../../context/AppProvider";
 import { useNavigate } from "react-router-dom";
 import useOutsideClick from "../../hooks/useOutsideClick";
 
 export default function MainTab() {
-  const { setIsInfoUserModalOpen } = React.useContext(AppContext);
+  const { setIsInfoUserModalOpen,user } = React.useContext(AppContext);
+  
   const navigate = useNavigate();
 
   const { isActive, setIsActive, ref } = useOutsideClick(false);
@@ -30,27 +32,33 @@ export default function MainTab() {
   // };
 
   const handleLogout = () => {
+    localStorage.clear()
     navigate("/login");
   };
 
-  const user = {
-    displayName: "Kha Vỹ",
-    photoURL: "",
-  };
+  // const user = {
+  //   displayName: "Kha Vỹ",
+  //   photoURL: "",
+  // };
 
   return (
     <div className="main-tab">
       <div className="main-tab-top">
         <Button className="btn-avatar" onClick={handleOpenMenuUser}>
-          <Avatar size="large" src={user.photoURL}>
-            {user.photoURL ? "" : user.displayName?.charAt(0)?.toUpperCase()}
+          {user===undefined ? (<div></div>):(<div>
+            <Avatar size="large" src={user.avatarImage}>
+            {user.avatarImage ? "" : user.username?.charAt(0)?.toUpperCase()}
           </Avatar>
+          </div>)}
         </Button>
         <nav ref={ref} className={`menu ${isActive ? "active" : "inactive"}`}>
           <ul>
+          {user===undefined ? (<div></div>):(<div>
             <li className="menu-header">
-              <span>{user.displayName}</span>
+              <span>{user.username}</span>
             </li>
+          </div>)}
+            
             <li className="menu-body">
               <Button onClick={handleOpenInfoUser} type="text">
                 Hồ sơ của bạn

@@ -8,9 +8,7 @@ export default function ChatHeader({currentChat}) {
   
   return (
     <div className="chat-header">
-      {currentChat === undefined ? (
-           <div></div>
-          ) : ( 
+      
       <Row>
       
         <Col span={16}>
@@ -21,7 +19,7 @@ export default function ChatHeader({currentChat}) {
         </Col>
         
       </Row>
-      )}
+   
     </div>
   );
 }

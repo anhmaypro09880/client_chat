@@ -26,7 +26,9 @@ export default function Message({
   message,
   socket,
   currentChat,
-  test
+  test,
+  namesend,
+  avatarImage
 
 }) {
 
@@ -121,12 +123,12 @@ export default function Message({
   return (
     <div className="message">
       <div className={`${user.uid === mesUid ? "m-msg" : "msg"}`}>
-        <Avatar className="avatar" size="large" src={photoURL}>
-          {photoURL ? "" : displayName?.charAt(0)?.toUpperCase()}
+        <Avatar className="avatar" size="large" src={avatarImage}>
+          {avatarImage ? "" : displayName?.charAt(0)?.toUpperCase()}
         </Avatar>
         <div className="content">
           <Typography.Text className="message-author">
-            {displayName}
+            {namesend}
           </Typography.Text>
           <br />
           <Typography.Text className="message-text">{text}</Typography.Text>
